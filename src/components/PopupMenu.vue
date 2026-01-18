@@ -56,9 +56,14 @@ defineExpose({
 
 <template>
   <div class="popup-wrapper">
-    <button class="action-btn" @click="toggle">
-      <img src="@/assets/photo/弹出框.png" alt="" />
-    </button>
+    <el-tooltip
+      content="历史对话"
+      show-arrow="false"
+    >
+      <button class="action-btn" @click="toggle">
+        <img src="@/assets/photo/弹出框.png" alt="" />
+      </button>
+    </el-tooltip>
     <!-- 弹出框 -->
     <Transition
       enter-active-class="animate__animated animate__fadeInLeft"
@@ -102,7 +107,6 @@ defineExpose({
         </div>
       </div>
     </Transition>
-
     <!-- 添加对话框组件 -->
     <DialogEdit ref="dialogEdit" />
   </div>
@@ -111,7 +115,6 @@ defineExpose({
 <style lang="scss" scoped>
 .popup-wrapper {
   position: relative;
-
   .action-btn {
     width: 2rem;
     height: 2rem;
@@ -124,7 +127,6 @@ defineExpose({
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
-
     img {
       width: 1.4rem;
       height: 1.4rem;
@@ -289,4 +291,5 @@ defineExpose({
     margin: 0.25rem 0;
   }
 }
+
 </style>
